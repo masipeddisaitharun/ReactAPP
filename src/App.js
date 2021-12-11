@@ -2,14 +2,14 @@
 import React, { useState } from 'react'
 import './App.css';
 import Alert from './components/Alert';
-import About from './components/About';
+//import About from './components/About';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
-import {
+/*import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from "react-router-dom";
+}from "react-router-dom";*/
 
 function App() {
   const [look,setlook]=useState("light");
@@ -39,21 +39,15 @@ function App() {
   }
   
   return (
+    <>
     
-    <Router>
     <Navbar title="TextUtiles" mode={look} toggleMode={toggleMode}></Navbar>
     <Alert alert={alert}></Alert>
      <div className='container my-3'>
-       <Switch>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/">
             <Textform heading="Enter Text Here" mode={look}></Textform>
-          </Route>
-        </Switch>
      </div>
-     </Router>
+     </>
+    
   
   );
 }
